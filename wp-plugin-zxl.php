@@ -20,3 +20,6 @@ require_once plugin_dir_path( __FILE__ ) . 'includes/notice.php';
 
 /* include settings */
 require_once plugin_dir_path( __FILE__ ) . 'includes/settings.php';
+
+/* disable emoji */
+require_once plugin_dir_path( __FILE__ ) . 'includes/disable-emoji.php';
