@@ -9,16 +9,16 @@ if ( !function_exists('wp_new_user_notification') ) {
         $user_email = stripslashes($user->user_email);
   
         $message  = sprintf( __( '有新用户注册，在你的网站---%s:', 'zengxiaoluan' ), get_option('blogname') ) . "rnrn";
-        $message .= sprintf( __( '用户名: %s', 'zengxiaoluan' ), $user_login ) . "rnrn";
+        $message .= sprintf( __( '用户名: %s', 'zengxiaoluan' ), $user_login ) . "\r\n\r\n";
         $message .= sprintf( __( '邮件: %s', 'zengxiaoluan' ), $user_email ) . "\r\n";
   
         @wp_mail(get_option('admin_email'), sprintf( __( '[%s] 新用户注册', 'zengxiaoluan' ), get_option('blogname')), $message);
   
         $message  = __( '你好,', 'zengxiaoluan') . "\r\n\r\n";
-        $message .= sprintf( __( "欢迎来到 %s! 在这里登录：" , 'zengxiaoluan' ), get_option('blogname')) . "rnrn";
-        $message .= wp_login_url() . "rn";
+        $message .= sprintf( __( "欢迎来到 %s! 在这里登录：" , 'zengxiaoluan' ), get_option('blogname')) . "\r\n\r\n";
+        $message .= wp_login_url() . "\r\n";
         $message .= sprintf( __( '用户名: %s', 'zengxiaoluan' ), $user_login) . "\r\n";
-        $message .= sprintf( __( '密码: %s', 'zengxiaoluan' ), $plaintext_pass) . "rnrn";
+        $message .= sprintf( __( '密码: %s', 'zengxiaoluan' ), $plaintext_pass) . "\r\n\r\n";
         $message .= sprintf(__( '如果你遇到了什么问题, 请联系这个邮箱： %s.', 'zengxiaoluan' ), get_option('admin_email')) . "\r\n\r\n";
         $message .= __( 'Adios!', 'zengxiaoluan' );
   
